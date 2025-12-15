@@ -58,7 +58,7 @@ function initSearchSystem() {
 
         filtered.forEach(prod => {
             resultsContainer.innerHTML += `
-                <a href="${prod.categoria}s.html" class="search-result-item glow-effect">
+                    <a href="/singular-steel/${prod.categoria}s.html" class="search-result-item glow-effect"> 
                     <img src="${prod.imagem}" alt="${prod.titulo}">
                     <div>
                         <h4 style="color: var(--forge-orange)">${prod.titulo}</h4>
@@ -74,7 +74,7 @@ function initSearchSystem() {
 // --- 3. Carregamento do Portfólio via JSON ---
 async function loadPortfolioData() {
     try {
-        const response = await fetch('assets/data/portfolio.json');
+        const response = await fetch('/singular-steel/assets/data/portfolio.json');
         allProducts = await response.json(); 
 
         const featuredContainer = document.getElementById('featured-items-container');
@@ -117,4 +117,5 @@ function renderProducts(products, container) {
         `;
         container.innerHTML += card;
     });
+
 }
